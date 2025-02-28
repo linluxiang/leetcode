@@ -16,6 +16,9 @@ func volumn(height []int, i,j int) int {
     return h * length
 }
 
+/*
+这个解法的思路是这样的，对于一个固定的杆子来说，另外一个杆子在朝他靠近的过程中，只有找到更高的杆子才有可能有更大的面积。
+*/
 func maxArea(height []int) int {
     max := 0
     left := [][]int{}
@@ -75,3 +78,4 @@ func maxArea(height []int) int {
 
     return max
 }
+
