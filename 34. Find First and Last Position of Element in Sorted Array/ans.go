@@ -1,6 +1,6 @@
 func binarySearchFirst(nums []int, target int) int {
     i, j := -1, len(nums)
-    for i != j - 1 {
+    for i < j - 1 {
         mid := i + (j-i) >> 1
 
         if nums[mid] < target {
@@ -14,7 +14,7 @@ func binarySearchFirst(nums []int, target int) int {
 
 func binarySearchLast(nums []int, target int) int {
     i, j := -1, len(nums)
-    for i + 1 != j {
+    for i < j -1 {
         mid := i + (j-i) >> 1
 
         if nums[mid] <= target {
@@ -32,13 +32,13 @@ func searchRange(nums []int, target int) []int {
     }
 
     first := binarySearchFirst(nums, target)
-    fmt.Println("first: ", first)
+//    fmt.Println("first: ", first)
     if first >= len(nums) || nums[first] != target {
         first = -1
     }
 
     last := binarySearchLast(nums, target)
-    fmt.Println("last: ", last)
+ //   fmt.Println("last: ", last)
     if last < 0 || nums[last] != target {
         last = -1
     }
